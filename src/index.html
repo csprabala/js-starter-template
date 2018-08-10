@@ -3,12 +3,126 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
+  <title>Javascript Starter Template</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
   <script src="bundle.js"></script>
 </head>
 <body>
-  <h1>Hello, World!</h1>
+  <nav class="navbar navbar-default navbar-pf" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">
+        <b>Javascript Starter Template</b>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-utility">
+        <li>
+          <a href="#">Status</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="pficon pficon-user"></span>
+            John Doe <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">Settings</a>
+            </li>
+            <li>
+              <a href="#">Another link</a>
+            </li>
+            <li>
+              <a href="#">Something else here</a>
+            </li>
+            <li class="divider"></li>
+            <li class="dropdown-submenu">
+              <a tabindex="-1" href="#">More options</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#">Link</a>
+                </li>
+                <li>
+                  <a href="#">Another link</a>
+                </li>
+                <li>
+                  <a href="#">Something else here</a>
+                </li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li>
+                  <a href="#">Separated link</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#">One more separated link</a>
+                </li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="login.html">Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-primary">
+        <li>
+          <a href="index.html">Dashboard</a>
+        </li>
+        <li>
+          <a href="list.html">Page One</a>
+        </li>
+        <li class="active">
+          <a href="empty.html">Page two</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="page-header">
+            <h1>Welcome Page</h1>
+          </div>
+
+          <div class="blank-slate-pf">
+            <div class="blank-slate-pf-icon">
+              <i class="fa fa-rocket"></i>
+            </div>
+            <h1>Project Starter Template</h1>
+            <p>This is my javascript starter template based on patternfly <a href="#">on the documentation</a>.</p>
+            <div class="blank-slate-pf-main-action">
+              <button class="btn btn-primary btn-lg">
+                Main Action
+              </button>
+            </div>
+            <div class="blank-slate-pf-secondary-action">
+              <button class="btn btn-default">
+                Secondary Action
+              </button>
+              <button class="btn btn-default">
+                Secondary Action
+              </button>
+              <button class="btn btn-default">
+                Secondary Action
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+
+    </div>
+  </div><!-- container -->
 </body>
 </html>

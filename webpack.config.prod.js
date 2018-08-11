@@ -1,14 +1,15 @@
 var path = require('path');
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: "development",
-  devtool: 'inline-source-map',
+  mode: "production",
+  devtool: 'source-map',
   entry: "./src/index",
   target: 'web',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'src'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
 
   },
@@ -57,4 +58,7 @@ module.exports = {
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
+  optimization: {
+    minimize: true,
+  }
 };

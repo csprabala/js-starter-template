@@ -2,7 +2,8 @@
 
 This javascript starter template is based on https://github.com/coryhouse/javascript-development-environment.
 
-Here are the elements used to construct this template
+Notable differences:
 
-1. Editor Config
-2. NPM
+1. Sets up for Typescript instead of babel.
+2. Sets up Jest instead of Mocha.
+3. Uses latest webpack

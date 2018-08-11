@@ -29,10 +29,6 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.less$/,
-        use: ['style-loader', 'css-loader', 'less-loader']
-      },
-      {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
             loader: 'file-loader',

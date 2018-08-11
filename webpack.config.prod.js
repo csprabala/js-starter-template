@@ -1,6 +1,8 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var WebpackMd5Hash = require('webpack-md5-hash');
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   mode: "production",
@@ -8,14 +10,30 @@ module.exports = {
   entry: "./src/index",
   target: 'web',
   output: {
-    filename: 'bundle.js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/'
 
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
+      }
+    }),
+    new WebpackMd5Hash(),
+    new ExtractTextPlugin({
+      filename: '[name].[hash].css'
     })
   ],
   module:{
@@ -27,11 +45,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.less$/,
-        use: ['style-loader', 'css-loader', 'less-loader']
+        use: ExtractTextPlugin.extract({
+          fallback:'style-loader',
+          use:['css-loader','less-loader'],
+        })
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
